@@ -11,12 +11,12 @@
 
     <filter-mapping>
         <filter-name>myFilter</filter-name>
-        <url-pattern>/table</url-pattern>
+        <url-pattern>/tables</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
         <filter-name>myFilter</filter-name>
-        <url-pattern>/table/{tableName}</url-pattern>
+        <url-pattern>/tables/*</url-pattern>
     </filter-mapping>
 
 </web-app>

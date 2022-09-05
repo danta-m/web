@@ -4,3 +4,10 @@ POST http://localhost:8081/login
     "login":"admin",
     "password":"test123"
 }
+
+GET http://localhost:8081/tables
+GET http://localhost:8081/tables/names
+GET http://localhost:8081/tables/positions
+POST http://localhost:8081/tables/salary
+PUT http://localhost:8081/tables/salary
+DELETE http://localhost:8081/tables/salary

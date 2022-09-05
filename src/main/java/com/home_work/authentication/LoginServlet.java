@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession(true);
         String json = getBody(req);
         System.out.println(json);
-        session.setAttribute("name", req.getParameter("name"));
 
         PrintWriter out = resp.getWriter();
         out.println("<h1>Success from PostLogin</h1>");
@@ -29,6 +28,8 @@ public class LoginServlet extends HttpServlet {
         System.out.println(userMap);
 
         session.setAttribute("user", userMap);
+
+        out.println(session.getServletContext());
     }
     public static String getBody(HttpServletRequest request) {
         StringBuilder bodyBuilder = new StringBuilder();
