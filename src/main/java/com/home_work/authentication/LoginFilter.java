@@ -22,7 +22,7 @@ public class LoginFilter implements Filter {
 
         System.out.println("1. LoginFilter.doFilter");
 
-        HttpSession session = ((HttpServletRequest) request).getSession(false);
+        HttpSession session = ((HttpServletRequest) request).getSession(true);
         boolean isLoggedIn = session.getAttribute("user") != null;
         PrintWriter out = response.getWriter();
 
