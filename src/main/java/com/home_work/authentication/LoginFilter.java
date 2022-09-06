@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class LoginFilter implements Filter {
-    private FilterConfig config;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -24,16 +23,19 @@ public class LoginFilter implements Filter {
         System.out.println("1. LoginFilter.doFilter");
 
         HttpSession session = ((HttpServletRequest) request).getSession(false);
-
         boolean isLoggedIn = session.getAttribute("user") != null;
         PrintWriter out = response.getWriter();
-        out.println(session.getServletContext());
 
          if (isLoggedIn) {
              out.println("success");
              filterChain.doFilter(request, response);
          } else {
-             out.println(HttpServletResponse.SC_FORBIDDEN); //not working
+             HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+            httpServletResponse.sendError(HttpServletResponse.SC_FORBIDDEN);
+//             out.println(HttpServletResponse.SC_FORBIDDEN); //not working
+             out.println("something wrong");
+             out.println(session.getServletContext());
+
          }
     }
 

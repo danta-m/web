@@ -19,4 +19,9 @@
         <url-pattern>/tables/*</url-pattern>
     </filter-mapping>
 
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error-403.html</location>
+    </error-page>
+
 </web-app>

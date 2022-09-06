@@ -80,6 +80,7 @@ public class TableServlet extends HttpServlet {
         if(deleteFile.exists()) {
             deleteFile.delete();
             out.println(deleteFile.getName() + " successfully deleted");
-        }
+        } else
+            out.println(deleteFile.getName() + " not exist");
     }
 }
